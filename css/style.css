@@ -1,0 +1,129 @@
+.twitterIcon{
+  color: rgb(0, 172, 237);
+}
+
+.githubIcon{
+  color: rgb(102, 43, 129);
+}
+
+.facebookIcon{
+  color: rgb(59, 89, 163);
+}
+
+.linkedinIcon{
+  color: rgb(0, 127, 178);
+}
+
+.projectTitle{
+  color: blue;
+}
+
+.titlePhrase{
+  color: yellow;
+}
+
+.block{
+  background-color: black;
+  opacity: .8;
+  padding: 10px;
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 10px;
+}
+
+i{
+  color:white;
+}
+
+.nav-pills{
+  font-family: 'Vibur', cursive;
+  font-size:2.0em;
+  background-color: black;
+  margin-bottom: 10%;
+}
+
+body{
+  background-color: black;
+  font-family: 'Josefin Sans', sans-serif;
+  color: white;
+}
+ 
+h1{
+  padding: 0;
+  margin-top: 0px;
+  font-size: 6.0em;
+  padding-top: 0%;
+}
+
+.btn-default{
+  background-color: black;
+  border-color: black;
+  color: #337ab7;
+  font-size: 1.7em;
+  margin-top: 1%;
+}
+
+.pageOne{
+  background: url("https://www.jameseyeassociates.com/wp-content/themes/_default/images/slide1.jpg");
+  background-size: cover;
+  padding-bottom: 10%;
+}
+
+.pageTwo{
+  background: url("http://www.publicdomainpictures.net/pictures/150000/velka/wood-wallpaper-background-1.jpg");
+  backgroud-size: cover;
+  padding-bottom: 10%;
+  padding-top: 5%;
+}
+
+.pageThree{
+  background: url(https://www.theblockshop.com.au/images/products/croppedimage610488-895127.jpg);
+  background-size: cover;
+  padding-bottom: 10%;
+  padding-top: 5%;
+}
+
+.pageFour{
+  background: url(https://images6.alphacoders.com/664/664307.jpg);
+  background-size: cover;
+  padding-bottom: 5%;
+  padding-top: 5%;
+}
+
+.footer p{
+  font-size: 18px;
+}
+
+p{
+  font-size: 2.2em;
+}.pItems{
+  height: 250px;
+  border-radius: 50%;
+}
+
+.paddingBTN{
+   width:200px;
+   margin-bottom:25px;
+}
+
+.paddingTop{
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.footer{
+  background-color: black;
+}
+
+.footer a{
+  vertical-align: middle;
+}
+
+.me{
+  height:400px;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 50%;
+}
