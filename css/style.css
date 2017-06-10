@@ -22,6 +22,21 @@
   color: yellow;
 }
 
+body{
+  background-color: black;
+  font-family: 'Josefin Sans', sans-serif;
+  color: white;
+}
+
+#navBar{
+  font-family: 'Vibur', cursive;
+  font-size:1.5em;
+}
+
+#navTitle{
+  font-size: 1.5em;
+}
+
 .block{
   background-color: black;
   opacity: .8;
@@ -36,19 +51,7 @@ i{
   color:white;
 }
 
-.nav-pills{
-  font-family: 'Vibur', cursive;
-  font-size:2.0em;
-  background-color: black;
-  margin-bottom: 10%;
-}
 
-body{
-  background-color: black;
-  font-family: 'Josefin Sans', sans-serif;
-  color: white;
-}
- 
 h1{
   padding: 0;
   margin-top: 0px;
