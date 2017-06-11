@@ -10,8 +10,8 @@
   color: rgb(59, 89, 163);
 }
 
-.linkedinIcon{
-  color: rgb(0, 127, 178);
+.gmailIcon{
+  color: rgb(221, 75, 57);
 }
 
 .projectTitle{
@@ -38,17 +38,23 @@ body{
   font-size: 1.5em;
 }
 
-
 .navElement:hover{
   background-color: #FFFF00;
   color: #FFC0CB;
   border-radius: 5px;
 }
 
+.jumbotron{
+  background-image: url("../img/jumboImg.jpg");
+  background-size: cover;
+  height: 100%;
+}
+
 .block{
   background-color: black;
   opacity: .8;
-  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 2px;
   width: 50%;
   margin-right: auto;
   margin-left: auto;
