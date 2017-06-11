@@ -31,10 +31,18 @@ body{
 #navBar{
   font-family: 'Vibur', cursive;
   font-size:1.5em;
+  padding:10px;
 }
 
 #navTitle{
   font-size: 1.5em;
+}
+
+
+.navElement:hover{
+  background-color: #FFFF00;
+  color: #FFC0CB;
+  border-radius: 5px;
 }
 
 .block{
