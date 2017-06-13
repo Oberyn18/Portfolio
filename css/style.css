@@ -18,60 +18,75 @@
   color: blue;
 }
 
-.titlePhrase{
-  color: yellow;
-}
-
 body{
   background-color: black;
   font-family: 'Josefin Sans', sans-serif;
+  font-size: 100%;
   color: white;
 }
 
 #navBar{
-  font-family: 'Vibur', cursive;
-  font-size:1.5em;
-  padding:10px;
+  font-family: 'Cabin', sans-serif;
+  font-size: 2em;
+  opacity: .6;
+  background-color: #3e3b4d;
+  border: 0;
 }
 
 #navTitle{
   font-size: 1.5em;
+  color: white;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: white;
 }
 
 .navElement:hover{
-  background-color: #FFFF00;
-  color: #FFC0CB;
-  border-radius: 5px;
+  background-color: rgba(255, 222, 0, 1);
+  border-radius: 0.5em;
 }
 
 .jumbotron{
   background-image: url("../img/jumboImg.jpg");
   background-size: cover;
+  background-position: bottom;
   height: 100%;
 }
 
 .block{
   background-color: black;
-  opacity: .8;
-  padding-top: 10px;
-  padding-bottom: 2px;
+  opacity: .9;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
   width: 50%;
   margin-right: auto;
   margin-left: auto;
-  border-radius: 10px;
+  border-radius: 0.9em;
 }
 
-i{
-  color:white;
+.mainPage{
+  font-size: 3em;
+  color: rgba(247, 202, 23, 0.71);
 }
 
+.jumbotron .h1, .jumbotron h1 {
+  color: rgba(247, 202, 23, 0.71);
+}
 
+.subtitle{
+  font-size: 2.5em;
+  color: #295ed1;
+}
+
+/*
 h1{
   padding: 0;
   margin-top: 0px;
   font-size: 6.0em;
   padding-top: 0%;
 }
+*/
 
 .btn-default{
   background-color: black;
