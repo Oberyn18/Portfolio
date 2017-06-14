@@ -18,23 +18,26 @@
   color: blue;
 }
 
+:root{
+  font-size: 100%;
+}
+
 body{
   background-color: black;
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 100%;
   color: white;
 }
 
 #navBar{
   font-family: 'Cabin', sans-serif;
-  font-size: 2em;
+  font-size: 1.5rem;
   opacity: .6;
   background-color: #3e3b4d;
   border: 0;
 }
 
 #navTitle{
-  font-size: 1.5em;
+  font-size: 1.5rem;
   color: white;
 }
 
@@ -44,7 +47,7 @@ body{
 
 .navElement:hover{
   background-color: rgba(255, 222, 0, 1);
-  border-radius: 0.5em;
+  border-radius: 0.5rem;
 }
 
 .jumbotron{
@@ -57,16 +60,16 @@ body{
 .block{
   background-color: black;
   opacity: .9;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   width: 50%;
   margin-right: auto;
   margin-left: auto;
-  border-radius: 0.9em;
+  border-radius: 0.9rem;
 }
 
 .mainPage{
-  font-size: 3em;
+  font-size: 3rem;
   color: rgba(247, 202, 23, 0.71);
 }
 
@@ -75,7 +78,7 @@ body{
 }
 
 .subtitle{
-  font-size: 2.5em;
+  font-size: 2rem;
   color: #295ed1;
 }
 
@@ -92,7 +95,7 @@ h1{
   background-color: black;
   border-color: black;
   color: #337ab7;
-  font-size: 1.7em;
+  font-size: 1.7rem;
   margin-top: 1%;
 }
 
@@ -128,7 +131,7 @@ h1{
 }
 
 p{
-  font-size: 2.2em;
+  font-size: 2.2rem;
 }.pItems{
   height: 250px;
   border-radius: 50%;
