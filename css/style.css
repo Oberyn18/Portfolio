@@ -28,6 +28,7 @@ body{
   color: white;
 }
 
+/* ----------------- NAVIGATION BAR -----------------*/
 #navBar{
   font-family: 'Cabin', sans-serif;
   font-size: 1.5rem;
@@ -50,6 +51,7 @@ body{
   border-radius: 0.5rem;
 }
 
+/* ----------------- MAIN PAGE (JUMBOTRON) -----------------*/
 .jumbotron{
   background-image: url("../img/jumboImg.jpg");
   background-size: 100%;
@@ -82,14 +84,7 @@ body{
   color: #295ed1;
 }
 
-/*
-h1{
-  padding: 0;
-  margin-top: 0px;
-  font-size: 6.0em;
-  padding-top: 0%;
-}
-*/
+/* ----------------- LITTLE SUMMARY -----------------*/
 
 .btn-default{
   background-color: black;
@@ -99,15 +94,23 @@ h1{
   margin-top: 1%;
 }
 
-.pageOne{
-  background: url("https://www.jameseyeassociates.com/wp-content/themes/_default/images/slide1.jpg");
+#p2{
+  background: url("../img/summaryBG.jpg") center center fixed;
+  background-repeat: no-repeat;
   background-size: cover;
-  padding-bottom: 10%;
+}
+
+#sumTitle{
+  font-size: 2.5rem;
+}
+
+.myPicture{
+  height: 30em;
 }
 
 .pageTwo{
   background: url("http://www.publicdomainpictures.net/pictures/150000/velka/wood-wallpaper-background-1.jpg");
-  backgroud-size: cover;
+  background-size: cover;
   padding-bottom: 10%;
   padding-top: 5%;
 }
@@ -130,13 +133,6 @@ h1{
   font-size: 18px;
 }
 
-p{
-  font-size: 2.2rem;
-}.pItems{
-  height: 250px;
-  border-radius: 50%;
-}
-
 .paddingBTN{
    width:200px;
    margin-bottom:25px;
@@ -153,12 +149,4 @@ p{
 
 .footer a{
   vertical-align: middle;
-}
-
-.me{
-  height:400px;
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-  border-radius: 50%;
 }
