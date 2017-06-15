@@ -54,6 +54,7 @@ body{
   background-image: url("../img/jumboImg.jpg");
   background-size: 100%;
   background-position: bottom;
+  background-repeat: no-repeat;
 }
 
 .block{
@@ -61,7 +62,7 @@ body{
   opacity: .9;
   padding-top: 0.4rem;
   padding-bottom: 0.4rem;
-  width: 65%;
+  width: 50vw;
   margin-right: auto;
   margin-left: auto;
   border-radius: 0.9rem;
