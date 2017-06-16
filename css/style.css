@@ -95,18 +95,33 @@ body{
 }
 
 #p2{
-  background: url("../img/summaryBG.jpg") center center fixed;
+  background: url("../img/summaryBG.png") center center fixed;
   background-repeat: no-repeat;
   background-size: cover;
+  color: #03C9A9;
+  font-size: 1.5rem;
 }
 
 #sumTitle{
-  font-size: 2.5rem;
+  font-size: 3rem;
+  color: #C8F7C5;
 }
 
-.myPicture{
-  height: 30em;
+#myPicture{
+  margin: 0 auto;
+  padding: 4%;
+  height: 60%;
+  width: 60%;
+  border-radius: 15%;
 }
+
+.lista{
+  font-size: 1.8rem;
+  color: #86E2D5;
+}
+
+
+
 
 .pageTwo{
   background: url("http://www.publicdomainpictures.net/pictures/150000/velka/wood-wallpaper-background-1.jpg");
