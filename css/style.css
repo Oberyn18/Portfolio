@@ -14,8 +14,8 @@
   color: rgb(221, 75, 57);
 }
 
-.projectTitle{
-  color: blue;
+.codepenIcon{
+  color: white;
 }
 
 html{
@@ -26,6 +26,14 @@ body{
   background-color: black;
   font-family: 'Josefin Sans', sans-serif;
   color: white;
+}
+
+.btn-default{
+  background-color: black;
+  border-color: black;
+  color: #337ab7;
+  font-size: 1.7rem;
+  margin-top: 1%;
 }
 
 /* ----------------- NAVIGATION BAR -----------------*/
@@ -85,15 +93,6 @@ body{
 }
 
 /* ----------------- LITTLE SUMMARY -----------------*/
-
-.btn-default{
-  background-color: black;
-  border-color: black;
-  color: #337ab7;
-  font-size: 1.7rem;
-  margin-top: 1%;
-}
-
 #p2{
   background: url("../img/summaryBG.png") center center fixed;
   background-repeat: no-repeat;
@@ -120,22 +119,55 @@ body{
   color: #86E2D5;
 }
 
-
-
-
-.pageTwo{
-  background: url("http://www.publicdomainpictures.net/pictures/150000/velka/wood-wallpaper-background-1.jpg");
-  background-size: cover;
-  padding-bottom: 10%;
-  padding-top: 5%;
+/************** PORTAFOLIO ******************/
+.portfolioPhrase{
+  background-color: black;
+  opacity: .8;
+  width: 30%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+  border-radius: 0.5rem;
 }
 
-.pageThree{
-  background: url(https://www.theblockshop.com.au/images/products/croppedimage610488-895127.jpg);
+#p3{
+  background: url("../img/portfolioBG.jpg") center center;
+  background-repeat: no-repeat;
   background-size: cover;
-  padding-bottom: 10%;
-  padding-top: 5%;
+  color: rgb(228, 252, 27);
+  font-size: 2.4rem;
 }
+
+.githubProject{
+  height: 400px;
+  margin: auto;
+}
+
+.portfolioProject{
+  font-size: 2rem;
+  margin-top: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right, padding-left: 2px;
+}
+
+.codepenProject{
+  margin-top: -52px;
+}
+
+.projectTitle{
+  color: white;
+}
+
+
+
+
+
+
+
 
 .pageFour{
   background: url(https://images6.alphacoders.com/664/664307.jpg);
@@ -151,11 +183,6 @@ body{
 .paddingBTN{
    width:200px;
    margin-bottom:25px;
-}
-
-.paddingTop{
-  padding-top: 2%;
-  padding-bottom: 2%;
 }
 
 .footer{
