@@ -18,6 +18,10 @@
   color: white;
 }
 
+.heartIcon{
+  color: red;
+}
+
 html{
   font-size: 1.5em;
 }
@@ -155,38 +159,38 @@ body{
 }
 
 .codepenProject{
-  margin-top: -52px;
+  margin-top: -57px;
 }
 
 .projectTitle{
   color: white;
 }
 
-
-
-
-
-
-
-
-.pageFour{
-  background: url(https://images6.alphacoders.com/664/664307.jpg);
-  background-size: cover;
+/********************* CONTACT PAGE ****************/
+#p4{
+  background: url(../img/contactBG.jpeg) center center;
   padding-bottom: 5%;
   padding-top: 5%;
+  padding-left: 10%;
+  color: black;
+}
+
+#emailContact{
+  color: rgba(255, 230, 0, 0.92);
+}
+
+.btn-group{
+  margin-left: 40%;
+}
+
+/******************** FOOTER ****************/
+.footer{
+  background-color: black;
+  font-size: 1.2rem;
 }
 
 .footer p{
-  font-size: 18px;
-}
-
-.paddingBTN{
-   width:200px;
-   margin-bottom:25px;
-}
-
-.footer{
-  background-color: black;
+  font-size: 1rem;
 }
 
 .footer a{
