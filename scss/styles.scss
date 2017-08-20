@@ -1,0 +1,17 @@
+
+
+
+// Layout variables
+$max-width: 1366px;
+$gutter: 16px;
+
+// Font sizes
+$m: 16px;
+$xl: $m * 1.5;
+$l: $m * 1.25;
+$s: $m * 0.8;
+$xs: $m * 0.7;
+
+@import "base/normalize";
+@import "base/base.scss";
+@import "modules/menu.scss";

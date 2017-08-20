@@ -1,118 +1,57 @@
-<!DOCTYPE html>
 
-<html >
-<head>
-  <meta charset="UTF-8">
-  <title>Carlos Cordova Portfolio</title>
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/style.css">
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Cabin|Josefin+Sans" rel="stylesheet">
-</head>
-
-<body>
-  <!--  Navigation bar  ------------------>
-  <nav class="navbar navbar-default navbar-static-top" id="navBar" role="navigation">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" id="navTitle" href="#">Carlos A. Córdova</a>
-      </div>
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class = "nav navbar-nav navbar-right">
-          <li class="navElement"> <a href="#p2">Acerca de mí</a> </li>
-          <li class="navElement"> <a href="#p3">Portfolio</a> </li>
-          <li class="navElement"> <a href="#p4">Contáctame</a> </li>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="description" description="Computer Science Student"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="css/styles.css"/>
+    <title>Carlos Córdova | Computer Science</title>
+  </head>
+  <body>
+    <header class="main-header" id="header">
+      <nav class="menu container">
+        <div class="menu-title"><a class="main-menu__link main-menu__title">Carlos Córdova</a><a class="btn-menu" id="btn-menu">bars</a></div>
+        <ul class="main-menu">
+          <li class="main-menu__item"><a class="main-menu__link" href="#">About me</a></li>
+          <li class="main-menu__item"><a class="main-menu__link" href="#">My skills</a></li>
+          <li class="main-menu__item"><a class="main-menu__link" href="#">Latests works</a></li>
+          <li class="main-menu__item"><a class="main-menu__link" href="#">Contact me!</a></li>
         </ul>
+      </nav>
+    </header>
+    <section class="about" id="about">
+      <div class="section__title about__title"></div>
+      <div class="about__data">
+        <div class="about__data__img"></div>
+        <div class="about__data__description"></div>
       </div>
-    </div>
-  </nav>
-
-  <div class="container-fluid">
-    <!-- MAIN PAGE --------------------------->
-    <div class="jumbotron">
-      <div class = "text-center block">
-        <h1 class="mainPage">Carlos A. Córdova</h1>
-        <h2 class="subtitle">Ciencias de la computación e informática en general.</h2>
-      </div>
-      <div class ="text-center">
-        <a class = "btn btn-default" href = "https://twitter.com/carlosabcs18" target = "blank"><i class="fa fa-twitter fa-lg twitterIcon" aria-hidden="true"></i> Twitter</a>
-        <a class = "btn btn-default" href = "https://github.com/Oberyn18" target = "blank"><i class="fa fa-github-alt githubIcon" aria-hidden="true"></i> GitHub</a>
-        <a class = "btn btn-default" href = "https://www.facebook.com/CACordovaSaenz"target = "blank"><i class="fa fa-facebook facebookIcon" aria-hidden="true"></i> Facebook</a>
-        <a class = "btn btn-default" href = "mailto:carlosab1802@gmail.com" target = "blank"><i class="fa fa-envelope-o gmailIcon" aria-hidden="true"></i> Gmail</a>
-      </div>
-    </div>
-
-    <!-- Little summary -------------------->
-    <div class = "row" id="p2">
-      <div class = "col-md-6 col-xs-12 text-center">
-          <h1 id="sumTitle">Carlos A. Córdova</h1>
-          <p>Soy un estudiante de Ciencias de la Computación, nacido en Perú.</p>
-          <p>Actualmente me encuentro estudiando en el ICMC de la Universidad de Sao Paulo en Brasil.</p>
-          <p>Apasionado de la programación, constantemente aprendiendo nuevas cosas y manteniéndome actualizado con las tendencias actuales.</p>
-          <p class="lista">Lenguajes y frameworks en los que trabajo:</p>
-          <p>C, C++, Java, Python, Matlab, OpenCV, Lua, HTML5, CSS3, Bootstrap, SQL.<p/>
-          <p class="lista">Tópicos:</p>
-          <p>Programación Orientada a Objetos, Procesamiento de imágenes, Algoritmos, Bases de Datos, Sistemas Operativos, etc</p>
-      </div>
-      <div class = "col-md-6 col-xs-12">
-        <img class="img-responsive" id="myPicture" src="img/carlosCordova.jpg"/>
-      </div>
-    </div>
-
-    <!-- Portafolio de proyectos ----------------->
-    <div class = "row" id="p3">
-      <div class = "col-md-12 col-xs-12 pageThree text-center">
-        <div class="text-center portfolioPhrase">
-          <h1 class="titlePhrase">Mi portafolio de proyectos</h1>
-        </div>
-        <div class="container">
-          <div class = "row">
-            <div class = "col-md-6 col-xs-12">
-              <p data-height="400" data-theme-id="0" data-slug-hash="GNayoj" data-default-tab="result" data-user="Oberyn18" data-embed-version="2" data-pen-title="Tribute Page" class="codepen">See the Pen <a href="https://codepen.io/Oberyn18/pen/GNayoj/">Tribute Page</a> by Carlos Córdova (<a href="https://codepen.io/Oberyn18">@Oberyn18</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-    <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
-              <a class = "btn btn-default portfolioProject codepenProject" href="https://codepen.io/Oberyn18/pen/GNayoj"><h3 class="projectTitle"><i class="fa fa-codepen codepenIcon" aria-hidden="true"></i> Nikola Tesla Tribute Web</h3></a>
-            </div>
-            <div class = "col-md-6 col-xs-12">
-              <img class="img-responsive githubProject" src="img/tokenRing.png"/>
-              <a class="btn btn-default portfolioProject text-center" href="https://github.com/Oberyn18/Token-Ring-Simulation"><h3 class="projectTitle"><i class="fa fa-github-alt githubIcon" aria-hidden="true"></i> Algoritmo de Token Ring (S.S.O.O)</h3></a>
-            </div>
-          </div>
+    </section>
+    <section class="skills" id="skills">
+      <div class="section__title skills__title"></div>
+      <div class="skills__data">
+        <div class="skills__data__description"></div>
+        <div class="skills__data__widgets">
+          <div class="skills__data__widget-1"></div>
+          <div class="skills__data__widget-2"></div>
+          <div class="skills__data__widget-3"></div>
+          <div class="skills__data__widget-4"></div>
         </div>
       </div>
-    </div>
-
-    <!--  CONTACT PAGE ------------------------------->
-    <div class="row" id="p4">
-      <h1><i class="fa fa-envelope-o" aria-hidden="true"></i> Contáctame</h1>
-      <h2>Escríbeme a <a id="emailContact" href="mailto:carlosab1802@gmail.com" target="blank">carlosab1802@gmail.com</a> o sígueme en mis redes sociales:</h2>
-      <div class="btn-group">
-        <a class = "btn btn-default" href="https://twitter.com/carlosabcs18" target="blank"> <i class="fa fa-twitter fa-lg twitterIcon" aria-hidden="true"></i></a>
-        <a class = "btn btn-default" href = "https://github.com/Oberyn18" target="blank"><i class="fa fa-github-alt githubIcon" aria-hidden="true"></i></a>
-        <a class = "btn btn-default" href = "https://www.facebook.com/CACordovaSaenz"target="blank"><i class="fa fa-facebook facebookIcon" aria-hidden="true"></i></a>
+    </section>
+    <section class="works" id="works">
+      <div class="section__title works__title"></div>
+      <div class="works__data">
+        <div class="works__data__description"></div>
+        <div class="works__data__container"></div>
       </div>
-    </div>
-
-  </div> <!-- FINISHED MAIN DIV ------------->
-
-  <!-- FOOTER ------------------------------->
-  <div class="footer text-center">
-    <div class="container-fluid">
-      <h3>
-        <a href="#navBar">Carlos A. Córdova - </a>
-        <a href="#p2">¿Quien soy? - </a>
-        <a href="#p3">Proyectos - </a>
-        <a href="#p4">Contáctame</a>
-      </h3>
-      <p>Made with <i class="fa fa-heart heartIcon" aria-hidden="true"></i> by Oberyn18.   </p>
-    </div>
-  </div>
-  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-</body>
+    </section>
+    <section class="contact" id="contact">
+      <div class="section__title contact__title"></div>
+      <div class="contact__data">
+        <div class="contact__data__description"></div>
+        <div class="contact__data__pages"></div>
+      </div>
+    </section>
+    <footer class="footer"></footer>
+  </body>
 </html>
