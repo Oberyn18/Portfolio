@@ -4,6 +4,20 @@
     box-sizing: border-box;
 }
 
+// font-family: 'Alegreya', serif;
+// font-family: 'NTR', sans-serif;
+
+body {
+    font-family: 'NTR', sans-serif;
+    font-size: $m;
+}
+
+a {
+  &:visited {
+      color: inherit;
+  }  
+}
+
 .container {
     width: 100%;
     max-width: $max-width;

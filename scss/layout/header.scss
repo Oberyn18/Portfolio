@@ -1,0 +1,8 @@
+.main-header {
+    background-image: url('../img/mainPage.jpg');
+    background-size: cover;
+    height: 100vh;
+    @media screen and (min-width: 768px) {
+        background-position: center center;    
+    }    
+}

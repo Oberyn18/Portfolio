@@ -3,39 +3,23 @@ html(lang="en")
         meta(charset="utf-8")
         meta(name="description" description="Computer Science Student")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Alegreya:700|NTR")
         link(rel="stylesheet", href="css/styles.css")
         title Carlos Córdova | Computer Science
     body
         header.main-header#header
-            nav.menu.container
-                .menu-title
-                    a.main-menu__link.main-menu__title Carlos Córdova
-                    a.btn-menu#btn-menu bars
-                ul.main-menu
-                    li.main-menu__item
-                        a(href="#").main-menu__link About me
-                    li.main-menu__item
-                        a(href="#").main-menu__link My skills
-                    li.main-menu__item
-                        a(href="#").main-menu__link Latests works
-                    li.main-menu__item
-                        a(href="#").main-menu__link Contact me!
-
-
-        //- nav.menu
-        //-     .fixed-container.main-menu
-        //-         h1.main-menu__title Carlos Córdova
-        //-         ul.main-menu__list
-        //-             li.main-menu__item
-        //-                 a(href="#").main-menu__link About Me
-        //-             li.main-menu__item
-        //-                 a(href="#").main-menu__link My skills
-        //-             li.main-menu__item
-        //-                 a(href="#").main-menu__link Latests Works
-        //-             li.main-menu__item
-        //-                 a(href="#").main-menu__link Contact Me!
-        
-            
+            nav.menu
+                .main-menu.container
+                    a(href="#").main-menu__link.main-menu__title Carlos Córdova
+                    ul.main-menu__items
+                        li.main-menu__item
+                            a(href="#").main-menu__link About me
+                        li.main-menu__item
+                            a(href="#").main-menu__link My skills
+                        li.main-menu__item
+                            a(href="#").main-menu__link Latests works
+                        li.main-menu__item
+                            a(href="#").main-menu__link Contact me!
 
         section.about#about
             .section__title.about__title

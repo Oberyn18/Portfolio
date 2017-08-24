@@ -1,4 +1,5 @@
-
+// Colors
+$white: #fff;
 
 
 // Layout variables
@@ -14,4 +15,5 @@ $xs: $m * 0.7;
 
 @import "base/normalize";
 @import "base/base.scss";
+@import "layout/header.scss";
 @import "modules/menu.scss";
