@@ -13,9 +13,10 @@ body {
 }
 
 a {
-  &:visited {
-      color: inherit;
-  }  
+    color: $white;
+    &:visited {
+        color: inherit;
+    }  
 }
 
 .container {
