@@ -12,13 +12,6 @@ body {
     font-size: $m;
 }
 
-a {
-    color: $white;
-    &:visited {
-        color: inherit;
-    }
-}
-
 .container {
     width: 100%;
     max-width: $max-width;

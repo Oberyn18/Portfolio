@@ -404,9 +404,6 @@ body {
   font-family: 'NTR', sans-serif;
   font-size: 16px; }
 
-a:visited {
-  color: inherit; }
-
 .container {
   width: 100%;
   max-width: 1366px;
@@ -422,9 +419,11 @@ a:visited {
     .main-header {
       background-position: center center; } }
 
+a {
+  color: white; }
+
 .main-menu {
   text-align: center;
-  color: #fff;
   position: relative;
   background: rgba(0, 0, 0, 0.5); }
   @media screen and (min-width: 768px) {
