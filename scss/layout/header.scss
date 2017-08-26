@@ -4,54 +4,58 @@
     height: 100vh;
     @media screen and (min-width: 768px) {
         background-position: center center;    
-    }    
+    }
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .main-page {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    height: 80%;
-    align-items: center;
-
+    // height: 80%;
+    // align-items: center;
     &__title {
+        text-align: center;
         font-family: 'Alegreya', serif;
         margin: 0;
+        width: 100%;
         @media screen and (min-width: 1024px) {
             font-size: 3em;
         }
     }
 
-    &-button {
-        // height: 20%;
-        // display: none;  
-        font-size: $s;  
+    &__widget {
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        // align-items: center;
+
         &__button {
-            // display: block;
-            text-align: center;
+            font-size: $s; 
             font-weight: bold;
-            padding: .6em 1.3em;
+            padding: .6em 1.1em;
             border: 2px solid white;
             border-radius: .3em;
 
             @media screen and (min-width: 768px) {
-                font-size: 1em;
+                font-size: .8em;
             }
 
             @media screen and (min-width: 1024px) {
-                font-size: 1.1em;
+                font-size: 1em;
             }
         }
-    }
 
-    &-icon {
-        display: flex;
-        justify-content: center;
-        
-        &__icon-angle-down {
-            padding-top: .25em;
-            font-size: 1.5em;
+        &__icon {
+            width: 100%;
+            text-align: center;
+            margin-top: .5em;
         }
     }
+}
+
+.icon-angle-down {
+    font-size: 1.2em;
 }
