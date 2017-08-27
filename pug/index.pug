@@ -15,7 +15,7 @@ html(lang="en")
                     a(href="#").main-menu__link.main-menu__title Carlos Córdova
                     ul.main-menu__items
                         li.main-menu__item
-                            a(href="#").main-menu__link About me
+                            a(href="#about").main-menu__link About me
                         li.main-menu__item
                             a(href="#").main-menu__link My skills
                         li.main-menu__item
@@ -28,16 +28,18 @@ html(lang="en")
                 .main-page__widget
                     a(href="#").main-page__widget__button ABOUT ME
                     a(href="#").main-page__widget__icon.icon-angle-down
-            //-         h1.main-page__title Hello and Welcome!
-            //-     .main-page-button
-            //-         a(href="#").main-page-button__button ABOUT ME
-            //-     .main-page-icon
-            //-         a(href="#").main-page-icon__icon-angle-down.icon-angle-down
-        section.about#about
-            .section__title.about__title
-            .about__data
-                .about__data__img
-                .about__data__description
+        
+        .section-1#about
+            .container.about
+                .about__info
+                    p.about__number #1
+                    h2.about__title A Little About Me
+                    h2.about__icon.icon-comments-o
+                .about__data
+                    .about__data__img-container
+                        img(src="../img/about-img.jpg", alt="Laptop").about__data__img
+                    p.about__data__description Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas eligendi suscipit neque minima praesentium, harum aspernatur minus non. Veritatis amet tenetur doloremque culpa id! Assumenda placeat vitae amet unde alias! Magnam itaque molestiae quibusdam ex, cum placeat iste. Dolores rem esse quam voluptatibus. Aliquid natus ipsum mollitia exercitationem placeat eius.
+        
         section.skills#skills
             .section__title.skills__title
             .skills__data

@@ -3,7 +3,7 @@ $white: #fff;
 
 
 // Layout variables
-$max-width: 1366px;
+$max-width: 1024px;
 $gutter: 16px;
 
 // Font sizes
@@ -17,3 +17,4 @@ $xs: $m * 0.7;
 @import "base/base.scss";
 @import "layout/header.scss";
 @import "modules/menu.scss";
+@import "layout/about.scss";

@@ -407,9 +407,13 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1366px;
+  max-width: 1024px;
   margin-left: auto;
   margin-right: auto; }
+
+img {
+  max-width: 100%;
+  height: auto; }
 
 .main-header {
   background-image: url("../img/mainPage.jpg");
@@ -558,3 +562,82 @@ a {
     font-size: 1.15em; }
     .main-menu__item:hover {
       border-bottom-color: teal; }
+
+.section-1 {
+  background-color: #F05D67; }
+
+.about {
+  height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .about__info {
+    text-align: center; }
+  .about__data {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .about__data__img-container {
+      width: 50%; }
+      @media screen and (max-width: 767px) {
+        .about__data__img-container {
+          display: none; } }
+    .about__data__img {
+      display: block;
+      margin-left: auto;
+      margin-right: 2em;
+      -webkit-border-radius: 10%;
+              border-radius: 10%;
+      width: 60%; }
+    .about__data__description {
+      margin-right: 1.5em;
+      width: 50%;
+      word-wrap: break-word;
+      display: block; }
+      @media screen and (max-width: 767px) {
+        .about__data__description {
+          width: 80%; } }
+      @media screen and (min-width: 425px) {
+        .about__data__description {
+          font-size: 1.1em; } }
+  .about__number {
+    font-family: 'Alegreya', serif;
+    font-weight: bold;
+    font-size: 1.35em; }
+    @media screen and (min-width: 425px) {
+      .about__number {
+        font-size: 1.5em; } }
+    @media screen and (min-width: 768px) {
+      .about__number {
+        font-size: 1.8em; } }
+  .about__title, .about__icon {
+    font-family: 'Alegreya', serif; }
+    @media screen and (min-width: 425px) {
+      .about__title, .about__icon {
+        font-size: 2em; } }
+    @media screen and (min-width: 768px) {
+      .about__title, .about__icon {
+        font-size: 2.4em; } }
