@@ -637,7 +637,8 @@ a {
     font-family: 'Alegreya', serif; }
     @media screen and (min-width: 425px) {
       .about__title, .about__icon {
-        font-size: 2em; } }
+        font-size: 2em;
+        margin-top: -1rem; } }
     @media screen and (min-width: 768px) {
       .about__title, .about__icon {
         font-size: 2.4em; } }
