@@ -1,8 +1,8 @@
-.section-1 {
-    background-color: #F05D67;
+.section-2 {
+    background-color: #57B5C1;
 }
 
-.about {
+.skills {
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -27,11 +27,9 @@
         }
     }
 
+
     &__title, &__icon {
         font-family: 'Alegreya', serif;
-        // margin-top: -1rem;
-
-
         @media screen and (min-width: 425px) {
             font-size: 2em;
             margin-top: -1rem;
@@ -47,42 +45,53 @@
             margin-top: -1.6rem;
         }
         position: relative;
-    }     
-    
+    }
+
     &__data {
-        // width: 100%;
         display: flex;
-        // flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-
-        &__img-container {
-            width: 50%;
-            @media screen and (max-width: 767px) {
-                display: none;
-            }
-        }
-
-        &__img {
-            display: block;
-            margin-left: auto;
-            margin-right: 2em;
-            // width: 15em;
-            border-radius: 10%;
-            width: 85%;
-        }
+        // flex-direction: column;
+        flex-wrap: wrap;
 
         &__description {
-            width: 50%;
+            
+            width: 80%;
             font-weight: bold;
             display: block;
             text-align: center;
-            @media screen and (max-width: 767px) {
-                width: 80%;
-            }
 
             @media screen and (min-width: 425px) {
                 font-size: 1.1em;
+                margin-top: -1rem;
+            }
+        }
+
+        &__widget {
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+
+            @media screen and (min-width: 768px) {
+                justify-content: center;
+            }
+
+            &__img {
+                @media screen and (max-width: 1023px) {
+                    display: none;
+                }
+            }
+
+            &__title {
+                font-family: 'Alegreya', serif;
+                text-align: center;
+            }
+
+            &__description {
+                text-align: center;
+                @media screen and (max-width: 767px) {
+                    display: none;
+                }
             }
         }
     }
