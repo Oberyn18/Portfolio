@@ -858,7 +858,7 @@ a {
       width: 100%;
       text-align: center; }
       .works__data__latest__img {
-        width: 17%;
+        width: 15%;
         -webkit-transform: none;
             -ms-transform: none;
                 transform: none;
@@ -961,12 +961,93 @@ a {
       width: 80%;
       font-weight: bold;
       display: block;
-      text-align: center; }
+      text-align: center;
+      margin-top: 0; }
       @media screen and (min-width: 425px) {
         .contact__data__description {
           font-size: 1.1em;
           margin-top: -1rem; } }
+      @media screen and (max-width: 374px) {
+        .contact__data__description:first-child {
+          margin-bottom: 0; } }
+  .contact__social {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 80%;
+    -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+    font-size: 1.5rem; }
+    @media screen and (min-width: 768px) {
+      .contact__social {
+        font-size: 2rem;
+        width: 55%; } }
+    .contact__social__item {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      width: 45px;
+      height: 45px;
+      -webkit-border-radius: 50%;
+              border-radius: 50%;
+      background: teal; }
+      @media screen and (min-width: 768px) {
+        .contact__social__item {
+          width: 55px;
+          height: 55px; } }
+
+.icon-behance {
+  background-color: #0293CD; }
+
+.icon-facebook {
+  background-color: #3b5998; }
+
+.icon-pinterest {
+  background-color: #bd081c; }
+
+.icon-twitter {
+  background-color: #1da1f2; }
+
+.icon-soundcloud {
+  background-color: #ff8800; }
+
+footer {
+  height: 120px;
+  background-color: #1962b1; }
 
 .footer {
-  height: 130px;
-  background-color: #1962b1; }
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: bold; }
+  .footer__text {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+
+.icon-star {
+  color: yellow;
+  padding: 0 6px; }

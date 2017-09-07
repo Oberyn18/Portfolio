@@ -1,5 +1,23 @@
-.footer {
-    height: 130px;
+footer {
+    height: 120px;
     background-color: #1962b1;
+}
 
+.footer {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+
+    &__text {
+        display: flex;
+    }
+}
+
+.icon-star {
+    // display: inline-block;
+    color: yellow;
+    padding: 0 6px;
 }

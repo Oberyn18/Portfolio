@@ -62,11 +62,60 @@
             font-weight: bold;
             display: block;
             text-align: center;
-
+            margin-top: 0;
             @media screen and (min-width: 425px) {
                 font-size: 1.1em;
                 margin-top: -1rem;
             }
+
+            @media screen and (max-width: 374px) {
+                &:first-child {
+                    margin-bottom: 0;    
+                }
+            }
+            
         }
     }
+
+    &__social {
+        display: flex;
+        width: 80%;
+        justify-content: space-around;
+        font-size: 1.5rem;
+
+        @media screen and (min-width: 768px) {
+            font-size: 2rem;    
+            width: 55%;
+        }
+
+        &__item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: teal;
+            @media screen and (min-width: 768px) {
+                width: 55px;
+                height: 55px;
+            }
+        }
+    }
+}
+
+.icon-behance {
+    background-color: #0293CD;
+}
+.icon-facebook {
+    background-color: #3b5998;
+}
+.icon-pinterest { 
+    background-color: #bd081c;
+}
+.icon-twitter {
+    background-color: #1da1f2;
+}
+.icon-soundcloud {
+    background-color: #ff8800;
 }
