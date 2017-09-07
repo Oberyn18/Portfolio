@@ -82,6 +82,15 @@
                 }
             }
 
+            &__icon {
+                display: none;
+                @media screen and (min-width: 425px) and (max-width: 767px) {
+                    display: block;
+                    font-size: 3rem;
+                    text-align: center;
+                }
+            }
+
             &__title {
                 font-family: 'Alegreya', serif;
                 text-align: center;

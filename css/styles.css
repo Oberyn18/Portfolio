@@ -757,6 +757,13 @@ a {
       @media screen and (max-width: 1023px) {
         .skills__data__widget__img {
           display: none; } }
+      .skills__data__widget__icon {
+        display: none; }
+        @media screen and (min-width: 425px) and (max-width: 767px) {
+          .skills__data__widget__icon {
+            display: block;
+            font-size: 3rem;
+            text-align: center; } }
       .skills__data__widget__title {
         font-family: 'Alegreya', serif;
         text-align: center; }
