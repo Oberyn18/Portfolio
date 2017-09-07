@@ -80,11 +80,14 @@
                 @media screen and (max-width: 1023px) {
                     display: none;
                 }
+                display: block;
+                // text-align: center;
+                margin: auto;
             }
 
             &__icon {
                 display: none;
-                @media screen and (min-width: 425px) and (max-width: 767px) {
+                @media screen and (min-width: 425px) and (max-width: 1023px) {
                     display: block;
                     font-size: 3rem;
                     text-align: center;
@@ -93,10 +96,15 @@
 
             &__title {
                 font-family: 'Alegreya', serif;
+                font-weight: bold;
                 text-align: center;
+                @media screen and (min-width: 425px) and (max-width: 1023px) {
+                    margin-top: -1.5rem;
+                }
             }
 
             &__description {
+                font-weight: bold;
                 text-align: center;
                 @media screen and (max-width: 767px) {
                     display: none;

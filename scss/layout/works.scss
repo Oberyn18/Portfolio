@@ -1,0 +1,48 @@
+.section-3 {
+    background-color: #A3A596;
+}
+
+.works {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__info {
+        text-align: center;
+    }
+
+    &__number {
+        font-family: 'Alegreya', serif;
+        font-weight: bold;
+        font-size: 1.35em;
+
+        @media screen and (min-width: 425px) {
+            font-size: 1.5em;
+        }
+
+        @media screen and (min-width: 768px) {
+             font-size: 1.8em;
+        }
+    }
+
+    &__title, &__icon {
+        font-family: 'Alegreya', serif;
+        @media screen and (min-width: 425px) {
+            font-size: 2em;
+            margin-top: -1rem;
+        }
+
+        @media screen and (min-width: 768px) {
+            font-size: 2.4em;
+        }
+    }
+
+    &__icon {
+        @media screen and (min-width: 768px) {
+            margin-top: -1.6rem;
+        }
+        position: relative;
+    }
+}

@@ -754,21 +754,131 @@ a {
           -webkit-justify-content: center;
               -ms-flex-pack: center;
                   justify-content: center; } }
-      @media screen and (max-width: 1023px) {
-        .skills__data__widget__img {
-          display: none; } }
+      .skills__data__widget__img {
+        display: block;
+        margin: auto; }
+        @media screen and (max-width: 1023px) {
+          .skills__data__widget__img {
+            display: none; } }
       .skills__data__widget__icon {
         display: none; }
-        @media screen and (min-width: 425px) and (max-width: 767px) {
+        @media screen and (min-width: 425px) and (max-width: 1023px) {
           .skills__data__widget__icon {
             display: block;
             font-size: 3rem;
             text-align: center; } }
       .skills__data__widget__title {
         font-family: 'Alegreya', serif;
+        font-weight: bold;
         text-align: center; }
+        @media screen and (min-width: 425px) and (max-width: 1023px) {
+          .skills__data__widget__title {
+            margin-top: -1.5rem; } }
       .skills__data__widget__description {
+        font-weight: bold;
         text-align: center; }
         @media screen and (max-width: 767px) {
           .skills__data__widget__description {
             display: none; } }
+
+.section-3 {
+  background-color: #A3A596; }
+
+.works {
+  height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .works__info {
+    text-align: center; }
+  .works__number {
+    font-family: 'Alegreya', serif;
+    font-weight: bold;
+    font-size: 1.35em; }
+    @media screen and (min-width: 425px) {
+      .works__number {
+        font-size: 1.5em; } }
+    @media screen and (min-width: 768px) {
+      .works__number {
+        font-size: 1.8em; } }
+  .works__title, .works__icon {
+    font-family: 'Alegreya', serif; }
+    @media screen and (min-width: 425px) {
+      .works__title, .works__icon {
+        font-size: 2em;
+        margin-top: -1rem; } }
+    @media screen and (min-width: 768px) {
+      .works__title, .works__icon {
+        font-size: 2.4em; } }
+  .works__icon {
+    position: relative; }
+    @media screen and (min-width: 768px) {
+      .works__icon {
+        margin-top: -1.6rem; } }
+
+.section-4 {
+  background-color: #DAAC08; }
+
+.contact {
+  height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .contact__info {
+    text-align: center; }
+  .contact__number {
+    font-family: 'Alegreya', serif;
+    font-weight: bold;
+    font-size: 1.35em; }
+    @media screen and (min-width: 425px) {
+      .contact__number {
+        font-size: 1.5em; } }
+    @media screen and (min-width: 768px) {
+      .contact__number {
+        font-size: 1.8em; } }
+  .contact__title, .contact__icon {
+    font-family: 'Alegreya', serif; }
+    @media screen and (min-width: 425px) {
+      .contact__title, .contact__icon {
+        font-size: 2em;
+        margin-top: -1rem; } }
+    @media screen and (min-width: 768px) {
+      .contact__title, .contact__icon {
+        font-size: 2.4em; } }
+  .contact__icon {
+    position: relative; }
+    @media screen and (min-width: 768px) {
+      .contact__icon {
+        margin-top: -1.6rem; } }
+
+.footer {
+  height: 130px;
+  background-color: #1962b1; }
