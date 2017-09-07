@@ -2,6 +2,11 @@
     background-color: #DAAC08;
 }
 
+.icon__line:before,
+.icon__line:after {
+    width: 36%;
+}
+
 .contact {
     height: 100vh;
     display: flex;
@@ -44,5 +49,24 @@
             margin-top: -1.6rem;
         }
         position: relative;
+    }
+
+    &__data {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        &__description {
+            width: 80%;
+            font-weight: bold;
+            display: block;
+            text-align: center;
+
+            @media screen and (min-width: 425px) {
+                font-size: 1.1em;
+                margin-top: -1rem;
+            }
+        }
     }
 }
