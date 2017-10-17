@@ -1,7 +1,7 @@
 {
-  "name": "portfolio",
+  "name": "one_page_portfolio",
   "version": "1.0.0",
-  "description": "Portafolio usando Pug y Sass",
+  "description": "Pagina de portfolio basado en un diseño de internet.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,6 +10,9 @@
     "type": "git",
     "url": "git+https://github.com/Oberyn18/Portfolio.git"
   },
+  "keywords": [
+    "portfolio"
+  ],
   "author": "Oberyn18",
   "license": "ISC",
   "bugs": {
@@ -17,9 +20,13 @@
   },
   "homepage": "https://github.com/Oberyn18/Portfolio#readme",
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
     "browser-sync": "^2.18.13",
+    "cssnano": "^3.10.0",
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^4.0.0",
+    "gulp-babel": "^7.0.0",
+    "gulp-postcss": "^7.0.0",
     "gulp-pug2": "0.0.2",
     "gulp-sass": "^3.1.0"
   }
