@@ -19,27 +19,27 @@ const postCSSPlugins = [
 gulp.task('es6', () => 
     gulp.src('./dev/js/*.js')
         .pipe(babel())
-        .pipe(gulp.dest('./public/js'))
+        .pipe(gulp.dest('./docs/js'))
 );
 
 gulp.task('sass', () => 
     gulp.src('./dev/scss/styles.scss')
         .pipe(sass())
         .pipe(postcss(postCSSPlugins))
-        .pipe(gulp.dest('./public/css'))
+        .pipe(gulp.dest('./docs/css'))
         .pipe(server.stream({match:'**/*.css'}))
 );
 
 gulp.task('pug', () => 
     gulp.src('./dev/pug/*.pug')
         .pipe(pug())
-        .pipe(gulp.dest('./public'))
+        .pipe(gulp.dest('./docs'))
 );
 
 gulp.task('default', () => {
     server.init({
         server: {
-            baseDir: './public'
+            baseDir: './docs'
         }
     });
     gulp.watch('./dev/js/*.js', ['es6', server.reload]);
