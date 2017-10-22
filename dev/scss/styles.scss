@@ -13,6 +13,10 @@ $l: $m * 1.25;
 $s: $m * 0.8;
 $xs: $m * 0.7;
 
+// body {
+//     overflow: hidden;
+// }
+
 @import "base/normalize";
 @import "base/base.scss";
 @import "layout/header.scss";
