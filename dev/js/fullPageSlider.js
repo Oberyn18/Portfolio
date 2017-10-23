@@ -41,18 +41,22 @@ const getSections = () => {
 // Evento para la rueda del ratón
 let flag = true;
 const wheelMove = (sections, actualSectionInd) => {
+    let total = sections.length;
     window.addEventListener('wheel', (e) => {
         e.preventDefault();
         if (flag) {
-            console.log('Hola');
             flag = false;
             if (e.deltaY > 0) {
                 ++actualSectionInd;
             } else {
-                --actualSectionInd;
+                if (actualSectionInd != 0) {
+                    --actualSectionInd;
+                }else {
+                    actualSectionInd = total - 1;
+                }
             }
-            let newSectionInd = actualSectionInd % sections.length;
-            changeScroll(sections[newSectionInd]);
+            actualSectionInd = actualSectionInd % total;
+            changeScroll(sections[actualSectionInd]);
             changeStatus();
         }
     });
@@ -62,7 +66,7 @@ const wheelMove = (sections, actualSectionInd) => {
 const changeStatus = () => {
     setTimeout(function () {
         flag = true;
-    }, 5000);
+    }, 1000);
 };
 
 

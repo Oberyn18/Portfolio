@@ -41,18 +41,22 @@ var getSections = function getSections() {
 // Evento para la rueda del ratón
 var flag = true;
 var wheelMove = function wheelMove(sections, actualSectionInd) {
+    var total = sections.length;
     window.addEventListener('wheel', function (e) {
         e.preventDefault();
         if (flag) {
-            console.log('Hola');
             flag = false;
             if (e.deltaY > 0) {
                 ++actualSectionInd;
             } else {
-                --actualSectionInd;
+                if (actualSectionInd != 0) {
+                    --actualSectionInd;
+                } else {
+                    actualSectionInd = total - 1;
+                }
             }
-            var newSectionInd = actualSectionInd % sections.length;
-            changeScroll(sections[newSectionInd]);
+            actualSectionInd = actualSectionInd % total;
+            changeScroll(sections[actualSectionInd]);
             changeStatus();
         }
     });
@@ -62,7 +66,7 @@ var wheelMove = function wheelMove(sections, actualSectionInd) {
 var changeStatus = function changeStatus() {
     setTimeout(function () {
         flag = true;
-    }, 5000);
+    }, 1000);
 };
 
 wheelMove(getSections(), 0, getCurrentPosition);
