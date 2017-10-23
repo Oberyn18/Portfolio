@@ -44,21 +44,17 @@ var wheelMove = function wheelMove(sections, actualSectionInd) {
     window.addEventListener('wheel', function (e) {
         e.preventDefault();
         if (flag) {
+            console.log('Hola');
             flag = false;
             if (e.deltaY > 0) {
                 ++actualSectionInd;
-                var newSectionInd = actualSectionInd % sections.length;
-                console.log(newSectionInd);
-                changeScroll(sections[newSectionInd]);
-                console.log('SCROLL ABAJO');
             } else {
                 --actualSectionInd;
-                var _newSectionInd = actualSectionInd % sections.length;
-                changeScroll(sections[_newSectionInd]);
-                console.log('SCROLL ARRIBA');
             }
+            var newSectionInd = actualSectionInd % sections.length;
+            changeScroll(sections[newSectionInd]);
+            changeStatus();
         }
-        changeStatus();
     });
 };
 

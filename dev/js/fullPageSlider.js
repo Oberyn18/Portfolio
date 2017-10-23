@@ -44,21 +44,17 @@ const wheelMove = (sections, actualSectionInd) => {
     window.addEventListener('wheel', (e) => {
         e.preventDefault();
         if (flag) {
+            console.log('Hola');
             flag = false;
             if (e.deltaY > 0) {
                 ++actualSectionInd;
-                let newSectionInd = actualSectionInd % sections.length;
-                console.log(newSectionInd);
-                changeScroll(sections[newSectionInd]);
-                console.log('SCROLL ABAJO');
             } else {
                 --actualSectionInd;
-                let newSectionInd = actualSectionInd % sections.length;
-                changeScroll(sections[newSectionInd]);
-                console.log('SCROLL ARRIBA');
             }
+            let newSectionInd = actualSectionInd % sections.length;
+            changeScroll(sections[newSectionInd]);
+            changeStatus();
         }
-        changeStatus();
     });
 }
 
