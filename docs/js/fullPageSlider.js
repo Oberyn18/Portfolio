@@ -28,7 +28,7 @@ var getActualSection = function getActualSection(sections) {
     return sections[sections.length - 1];
 };
 
-// Retorna todas las secciones en un array
+// Retorna todas las posiciones de las secciones escogidas, en un array
 var getSections = function getSections() {
     var e1 = document.getElementById('header');
     var e2 = document.getElementById('about');
@@ -38,14 +38,30 @@ var getSections = function getSections() {
     return [getElementPosition(e1), getElementPosition(e2), getElementPosition(e3), getElementPosition(e4), getElementPosition(e5)];
 };
 
+// Función que simula el "easing"
+var easing = function easing(progress) {
+    return progress < 0.5 ? 4 * progress * progress * progress : (progress - 1) * (2 * progress - 2) * (2 * progress - 2) + 1;
+};
+
+// Cambiar el estado de la bandera del evento rueda del ratón
+var changeStatus = function changeStatus(actualPosition, endLocation, animationFrame) {
+    if (actualPosition == endLocation) {
+        cancelAnimationFrame(animationFrame);
+        setTimeout(function () {
+            flag = true;
+        }, 2000);
+    }
+};
+
 // Evento para la rueda del ratón
-var flag = true;
+var flag = true; // bandera para detener o seguir
 var wheelMove = function wheelMove(sections, actualSectionInd) {
     var total = sections.length;
     window.addEventListener('wheel', function (e) {
         e.preventDefault();
         if (flag) {
             flag = false;
+            var startLocation = sections[actualSectionInd]; // posición inicial
             if (e.deltaY > 0) {
                 ++actualSectionInd;
             } else {
@@ -56,17 +72,26 @@ var wheelMove = function wheelMove(sections, actualSectionInd) {
                 }
             }
             actualSectionInd = actualSectionInd % total;
-            changeScroll(sections[actualSectionInd]);
+            var runAnimation = void 0; // guardará el animation frame
+            var timeLapsed = 0; // acumulador del tiempo transcurrido
+            var percentage = void 0,
+                position = void 0; // contenedores de las posiciones actuales y porcentaje avanzado
+            var duration = 2000; // duración deseada
+            var endLocation = sections[actualSectionInd]; // posición final
+            var distance = endLocation - startLocation; // distancia entre ambas posiciones
+            var animate = function animate() {
+                timeLapsed += 16;
+                percentage = timeLapsed / duration;
+                percentage = percentage > 1 ? 1 : percentage;
+                position = startLocation + distance * easing(percentage);
+                changeScroll(position);
+                runAnimation = requestAnimationFrame(animate);
+                changeStatus(position, endLocation, runAnimation);
+            };
+            runAnimation = requestAnimationFrame(animate);
             changeStatus();
         }
     });
-};
-
-// Cambiar el estado de la bandera del evento rueda del ratón
-var changeStatus = function changeStatus() {
-    setTimeout(function () {
-        flag = true;
-    }, 1000);
 };
 
 wheelMove(getSections(), 0, getCurrentPosition);

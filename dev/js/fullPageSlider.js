@@ -24,7 +24,7 @@ const getActualSection = (sections) => {
     return sections[sections.length-1];
 };
 
-// Retorna todas las secciones en un array
+// Retorna todas las posiciones de las secciones escogidas, en un array
 const getSections = () => {
     let e1 = document.getElementById('header');
     let e2 = document.getElementById('about');
@@ -38,14 +38,31 @@ const getSections = () => {
         getElementPosition(e5)];
 };
 
+
+// Función que simula el "easing"
+const easing = function(progress) {
+    return progress < 0.5 ? 4 * progress * progress * progress : (progress - 1) * (2 * progress - 2) * (2 * progress - 2) + 1;    
+}
+
+// Cambiar el estado de la bandera del evento rueda del ratón
+const changeStatus = (actualPosition, endLocation, animationFrame) => {
+    if (actualPosition == endLocation) {
+        cancelAnimationFrame(animationFrame);
+        setTimeout(function () {
+            flag = true;
+        }, 2000);  
+    }
+};
+
 // Evento para la rueda del ratón
-let flag = true;
+let flag = true; // bandera para detener o seguir
 const wheelMove = (sections, actualSectionInd) => {
     let total = sections.length;
     window.addEventListener('wheel', (e) => {
         e.preventDefault();
         if (flag) {
             flag = false;
+            let startLocation = sections[actualSectionInd]; // posición inicial
             if (e.deltaY > 0) {
                 ++actualSectionInd;
             } else {
@@ -56,18 +73,27 @@ const wheelMove = (sections, actualSectionInd) => {
                 }
             }
             actualSectionInd = actualSectionInd % total;
-            changeScroll(sections[actualSectionInd]);
+            let runAnimation; // guardará el animation frame
+            let timeLapsed = 0; // acumulador del tiempo transcurrido
+            let percentage, position; // contenedores de las posiciones actuales y porcentaje avanzado
+            let duration = 2000; // duración deseada
+            let endLocation = sections[actualSectionInd]; // posición final
+            let distance = endLocation - startLocation; // distancia entre ambas posiciones
+            const animate = () => {
+                timeLapsed += 16;
+                percentage = timeLapsed / duration;
+                percentage = percentage > 1 ? 1 : percentage;
+                position = startLocation + distance * easing(percentage);
+                changeScroll(position);
+                runAnimation = requestAnimationFrame(animate);
+                changeStatus(position, endLocation, runAnimation);
+            };
+            runAnimation = requestAnimationFrame(animate);            
             changeStatus();
         }
     });
 }
 
-// Cambiar el estado de la bandera del evento rueda del ratón
-const changeStatus = () => {
-    setTimeout(function () {
-        flag = true;
-    }, 1000);
-};
 
 
 wheelMove(getSections(), 0, getCurrentPosition);
