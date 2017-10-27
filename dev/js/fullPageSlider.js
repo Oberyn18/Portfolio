@@ -196,6 +196,46 @@ const initSwipeMovement = () => {
 };
 
 
+const moveToSection = (direction, sections) => {
+    let startPos = getActualSection(sections)[0];
+    let actualSectionInd = getActualSection(sections)[1];
+    let total = sections.length;
+    if (direction == 'down') {
+        ++actualSectionInd;
+    } else if (direction == 'up'){
+        if (actualSectionInd != 0) {
+            --actualSectionInd;
+        }else {
+            actualSectionInd = total - 1;
+        }
+    } else {
+        console.log('ERROR!');
+    }
+    let finalPos = sections[actualSectionInd + 1];
+    console.log("Posición actual: ", startPos);
+    console.log("Sección actual: ", actualSectionInd);
+    let runAnimation; // guardará el animation frame
+    let timeLapsed = 0; // acumulador del tiempo transcurrido
+    let percentage, position; // contenedores de las posiciones actuales y porcentaje avanzado
+    let duration = 2000; // duración deseada
+    let distance = finalPos - startPos; // distancia entre ambas posiciones
+    const animate = () => {
+        timeLapsed += 16;
+        percentage = timeLapsed / duration;
+        percentage = percentage > 1 ? 1 : percentage;
+        position = startPos + distance * easing(percentage);
+        changeScroll(position);
+        runAnimation = requestAnimationFrame(animate);
+        if (position == finalPos) {
+            cancelAnimationFrame(runAnimation);
+            setTimeout(function () {
+                
+            }, 2000);  
+        }
+    };
+    runAnimation = requestAnimationFrame(animate);
+}
+
 // FALTA:
 // Asignarle un evento a los botones de la barra de tareas para que te redirigan a la porción señalada.
 // Asignarle el evento a los botones de alguans secciones para que te dirijan a la sección siguiente.
