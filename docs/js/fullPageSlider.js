@@ -69,7 +69,9 @@ var easing = function easing(progress) {
     return progress < 0.5 ? 4 * progress * progress * progress : (progress - 1) * (2 * progress - 2) * (2 * progress - 2) + 1;
 };
 
-var animatedScrolling = function animatedScrolling(startPos, finalPos) {
+// Esta bandera activará y desactivará el scroll con el mouse en el evento siguiente, se define ahora porque animatedScrolling la usa
+var flag = false;
+var animatedScrolling = function animatedScrolling(startPos, finalPos, waitTime) {
     var runAnimation = void 0; // guardará el animation frame
     var timeLapsed = 0; // acumulador del tiempo transcurrido
     var percentage = void 0,
@@ -86,8 +88,8 @@ var animatedScrolling = function animatedScrolling(startPos, finalPos) {
         if (position == finalPos) {
             cancelAnimationFrame(runAnimation);
             setTimeout(function () {
-                console.log("LET IT GO.");
-            }, duration);
+                flag = true;
+            }, waitTime);
         }
     };
     runAnimation = requestAnimationFrame(animate);
@@ -103,72 +105,41 @@ var fullPageSlider = function fullPageSlider() {
     // Posición actual
     var startPos = getCurrentPosition();
     // Posición final (posición que debería estar ocupando el viewport)
-    var finalPos = sections[actualSectionInd][1];
+    var endPos = sections[actualSectionInd][1];
     // Animar el movimiento de la posición actual a la posición indicada.
-    animatedScrolling(startPos, finalPos);
+    animatedScrolling(startPos, endPos, 500);
+    // ----- EVENTO PARA LA RUEDA DEL RATÓN
+    // Total de secciones
+    var total = sections.length;
+    window.addEventListener('wheel', function (e) {
+        e.preventDefault();
+        if (flag) {
+            flag = false;
+            // Con actualSectionInd sabré cual es la sección actual
+            startPos = sections[actualSectionInd][1]; // posición inicial
+            if (e.deltaY > 0) {
+                // La sección a la que iré está después
+                ++actualSectionInd;
+            } else {
+                if (actualSectionInd != 0) {
+                    --actualSectionInd;
+                } else {
+                    actualSectionInd = total - 1;
+                }
+            }
+            actualSectionInd %= total;
+            endPos = sections[actualSectionInd][1]; // posición final
+            animatedScrolling(startPos, endPos, 0);
+        }
+    });
 };
 
 fullPageSlider();
-// stabilizeViewport(getCurrentPosition(), 2000);
-
-var initWheelMovement = function initWheelMovement() {
-    wheelMovement(sections, actualSection);
-};
-
-// Evento para la rueda del ratón
-var wheelMovement = function wheelMovement(sections, actualSection) {
-
-    // Cambiar el estado de la bandera del evento rueda del ratón
-    var changeStatus = function changeStatus(actualPosition, endLocation, animationFrame) {
-        if (actualPosition == endLocation) {
-            cancelAnimationFrame(animationFrame);
-            setTimeout(function () {
-                flag = true;
-            }, 2000);
-        }
-    };
-
-    var flag = true; // bandera para detener o seguir
-    var wheelMove = function wheelMove(sections, actualSectionInd) {
-        var total = sections.length;
-        window.addEventListener('wheel', function (e) {
-            e.preventDefault();
-            if (flag) {
-                flag = false;
-                var startLocation = sections[actualSectionInd]; // posición inicial
-                if (e.deltaY > 0) {
-                    ++actualSectionInd;
-                } else {
-                    if (actualSectionInd != 0) {
-                        --actualSectionInd;
-                    } else {
-                        actualSectionInd = total - 1;
-                    }
-                }
-                actualSectionInd = actualSectionInd % total;
-                var runAnimation = void 0; // guardará el animation frame
-                var timeLapsed = 0; // acumulador del tiempo transcurrido
-                var percentage = void 0,
-                    position = void 0; // contenedores de las posiciones actuales y porcentaje avanzado
-                var duration = 2000; // duración deseada
-                var endLocation = sections[actualSectionInd]; // posición final
-                var distance = endLocation - startLocation; // distancia entre ambas posiciones
-                var animate = function animate() {
-                    timeLapsed += 16;
-                    percentage = timeLapsed / duration;
-                    percentage = percentage > 1 ? 1 : percentage;
-                    position = startLocation + distance * easing(percentage);
-                    changeScroll(position);
-                    runAnimation = requestAnimationFrame(animate);
-                    changeStatus(position, endLocation, runAnimation);
-                };
-                runAnimation = requestAnimationFrame(animate);
-                changeStatus();
-            }
-        });
-    };
-    wheelMove(sections, actualSection);
-};
+/*
+ TODO:
+ - Cambiar esa bandera por un evento que bloquee el touch y la rueda del mouse.
+ - Hacer los eventos para el touch.
+*/
 
 // ---------------------------------------------------------- TOUCHSCREEN !!!! -------------------------------------------------
 var moveToSection = function moveToSection(direction, sections) {
@@ -253,10 +224,6 @@ var initSwipeMovement = function initSwipeMovement() {
     var sections = getSections();
     swipeDetect(sections);
 };
-// initSwipeMovement();
-
-// wheelMovement(getSections());
-
 
 // FALTA:
 // Asignarle un evento a los botones de la barra de tareas para que te redirigan a la porción señalada.
