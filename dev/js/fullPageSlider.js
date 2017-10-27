@@ -115,6 +115,8 @@ fullPageSlider();
 */
 
 // ---------------------------------------------------------- TOUCHSCREEN !!!! -------------------------------------------------
+
+/*
 const moveToSection = (direction, sections) => {
     let startPos = getActualSection(sections)[0];
     let actualSectionInd = getActualSection(sections)[1];
@@ -236,6 +238,7 @@ const moveToSection = (direction, sections) => {
     runAnimation = requestAnimationFrame(animate);
 }
 
+*/
 // FALTA:
 // Asignarle un evento a los botones de la barra de tareas para que te redirigan a la porción señalada.
 // Asignarle el evento a los botones de alguans secciones para que te dirijan a la sección siguiente.

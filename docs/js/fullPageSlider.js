@@ -69,7 +69,6 @@ var easing = function easing(progress) {
     return progress < 0.5 ? 4 * progress * progress * progress : (progress - 1) * (2 * progress - 2) * (2 * progress - 2) + 1;
 };
 
-<<<<<<< HEAD
 // Esta bandera activará y desactivará el scroll con el mouse en el evento siguiente, se define ahora porque animatedScrolling la usa
 var flag = false;
 var animatedScrolling = function animatedScrolling(startPos, finalPos, waitTime) {
@@ -88,31 +87,6 @@ var animatedScrolling = function animatedScrolling(startPos, finalPos, waitTime)
         runAnimation = requestAnimationFrame(animate);
         if (position == finalPos) {
             cancelAnimationFrame(runAnimation);
-=======
-var fullPageSlider = function fullPageSlider() {
-    // Esta variable (sectionsNames) se debe sobreescribir siempre que se use este slider en distintos proyectos.
-    var sectionsNames = ['header', 'about', 'skills', 'works', 'contact', 'footer'];
-    // Contiene pares (elementoHTML, posición en Y) sobre los cuales haremos el scroll
-    var sections = getSections(sectionsNames);
-    // Ahora, se debe encontrar la posición inicial cuando carga el slider.
-    var actualPosInd = getActualSectionInd(section);
-    // Ahora hay que estabilizar la sección
-
-};
-fullPageSlider();
-
-var initWheelMovement = function initWheelMovement() {
-    wheelMovement(sections, actualSection);
-};
-
-// Evento para la rueda del ratón
-var wheelMovement = function wheelMovement(sections, actualSection) {
-
-    // Cambiar el estado de la bandera del evento rueda del ratón
-    var changeStatus = function changeStatus(actualPosition, endLocation, animationFrame) {
-        if (actualPosition == endLocation) {
-            cancelAnimationFrame(animationFrame);
->>>>>>> 601a08040bb6e433ac85fc67ad7259000696810a
             setTimeout(function () {
                 flag = true;
             }, waitTime);
@@ -168,31 +142,32 @@ fullPageSlider();
 */
 
 // ---------------------------------------------------------- TOUCHSCREEN !!!! -------------------------------------------------
-var moveToSection = function moveToSection(direction, sections) {
-    var startPos = getActualSection(sections)[0];
-    var actualSectionInd = getActualSection(sections)[1];
-    var total = sections.length;
+
+/*
+const moveToSection = (direction, sections) => {
+    let startPos = getActualSection(sections)[0];
+    let actualSectionInd = getActualSection(sections)[1];
+    let total = sections.length;
     if (direction == 'down') {
         ++actualSectionInd;
-    } else if (direction == 'up') {
+    } else if (direction == 'up'){
         if (actualSectionInd != 0) {
             --actualSectionInd;
-        } else {
+        }else {
             actualSectionInd = total - 1;
         }
     } else {
         console.log('ERROR!');
     }
-    var finalPos = sections[actualSectionInd + 1];
+    let finalPos = sections[actualSectionInd + 1];
     console.log("Posición actual: ", startPos);
     console.log("Sección actual: ", actualSectionInd);
-    var runAnimation = void 0; // guardará el animation frame
-    var timeLapsed = 0; // acumulador del tiempo transcurrido
-    var percentage = void 0,
-        position = void 0; // contenedores de las posiciones actuales y porcentaje avanzado
-    var duration = 2000; // duración deseada
-    var distance = finalPos - startPos; // distancia entre ambas posiciones
-    var animate = function animate() {
+    let runAnimation; // guardará el animation frame
+    let timeLapsed = 0; // acumulador del tiempo transcurrido
+    let percentage, position; // contenedores de las posiciones actuales y porcentaje avanzado
+    let duration = 2000; // duración deseada
+    let distance = finalPos - startPos; // distancia entre ambas posiciones
+    const animate = () => {
         timeLapsed += 16;
         percentage = timeLapsed / duration;
         percentage = percentage > 1 ? 1 : percentage;
@@ -201,83 +176,79 @@ var moveToSection = function moveToSection(direction, sections) {
         runAnimation = requestAnimationFrame(animate);
         if (position == finalPos) {
             cancelAnimationFrame(runAnimation);
-            setTimeout(function () {}, 2000);
+            setTimeout(function () {
+                
+            }, 2000);  
         }
     };
     runAnimation = requestAnimationFrame(animate);
-};
-var swipeDetect = function swipeDetect(sections) {
-    var swipedir = void 0,
-        startX = void 0,
-        startY = void 0,
-        distX = void 0,
-        distY = void 0,
-        threshold = 150,
-        //required min distance traveled to be considered swipe
-    restraint = 100,
-        // maximum distance allowed at the same time in perpendicular direction
-    allowedTime = 1000,
-        // maximum time allowed to travel that distance
-    elapsedTime = void 0,
-        startTime = void 0;
-    window.addEventListener("touchstart", function (e) {
+}
+const swipeDetect = (sections) => {
+    let swipedir,
+    startX,
+    startY,
+    distX,
+    distY,
+    threshold = 150, //required min distance traveled to be considered swipe
+    restraint = 100, // maximum distance allowed at the same time in perpendicular direction
+    allowedTime = 1000, // maximum time allowed to travel that distance
+    elapsedTime,
+    startTime;
+    window.addEventListener("touchstart", (e) => {
         e.preventDefault();
-        var touchobj = e.changedTouches[0];
+        let touchobj = e.changedTouches[0]
         swipedir = 'none';
         startX = touchobj.pageX;
         startY = touchobj.pageY;
-        startTime = new Date().getTime(); // record time when finger first makes contact with surface
+        startTime = new Date().getTime() // record time when finger first makes contact with surface
     }, false);
-
-<<<<<<< HEAD
-    window.addEventListener("touchend", function (e) {
-        e.preventDefault();
-        var touchobj = e.changedTouches[0];
+    
+    window.addEventListener("touchend", (e) => {
+        e.preventDefault()
+        let touchobj = e.changedTouches[0];
         distX = touchobj.pageX - startX; // get horizontal dist traveled by finger while in contact with surface
         distY = touchobj.pageY - startY; // get vertical dist traveled by finger while in contact with surface
-        elapsedTime = new Date().getTime() - startTime; // get time elapsed
-        if (elapsedTime <= allowedTime) {
-            // first condition for awipe met
-            if (Math.abs(distY) >= threshold && Math.abs(distX) <= restraint) {
-                // 2nd condition for vertical swipe met
-                swipedir = distY < 0 ? 'down' : 'up'; // if dist traveled is negative, it indicates up swipe
+        elapsedTime = new Date().getTime() - startTime // get time elapsed
+        if (elapsedTime <= allowedTime){ // first condition for awipe met
+            if (Math.abs(distY) >= threshold && Math.abs(distX) <= restraint){ // 2nd condition for vertical swipe met
+                swipedir = (distY < 0)? 'down' : 'up' // if dist traveled is negative, it indicates up swipe
             }
         }
         console.log(swipedir);
         moveToSection(swipedir, sections);
     });
-};
-var initSwipeMovement = function initSwipeMovement() {
-    var sections = getSections();
+
+}
+const initSwipeMovement = () => {
+    let sections = getSections();
     swipeDetect(sections);
 };
 
-=======
-var moveToSection = function moveToSection(direction, sections) {
-    var startPos = getActualSection(sections)[0];
-    var actualSectionInd = getActualSection(sections)[1];
-    var total = sections.length;
+
+const moveToSection = (direction, sections) => {
+    let startPos = getActualSection(sections)[0];
+    let actualSectionInd = getActualSection(sections)[1];
+    let total = sections.length;
     if (direction == 'down') {
         ++actualSectionInd;
-    } else if (direction == 'up') {
+    } else if (direction == 'up'){
         if (actualSectionInd != 0) {
             --actualSectionInd;
-        } else {
+        }else {
             actualSectionInd = total - 1;
         }
     } else {
         console.log('ERROR!');
     }
-    var finalPos = sections[actualSectionInd + 1];
+    let finalPos = sections[actualSectionInd + 1];
     console.log("Posición actual: ", startPos);
     console.log("Sección actual: ", actualSectionInd);
-    var runAnimation = void 0; // guardará el animation frame
-    var timeLapsed = 0; // acumulador del tiempo transcurrido
-    var percentage = void 0,
-        position = void 0; // contenedores de las posiciones actuales y porcentaje avanzado
-    var duration = 2000; // duración deseada
-    var distance = finalPos - startPos; // distancia entre ambas posiciones
-    var animate = function animate() {
+    let runAnimation; // guardará el animation frame
+    let timeLapsed = 0; // acumulador del tiempo transcurrido
+    let percentage, position; // contenedores de las posiciones actuales y porcentaje avanzado
+    let duration = 2000; // duración deseada
+    let distance = finalPos - startPos; // distancia entre ambas posiciones
+    const animate = () => {
         timeLapsed += 16;
         percentage = timeLapsed / duration;
         percentage = percentage > 1 ? 1 : percentage;
@@ -286,63 +257,15 @@ var moveToSection = function moveToSection(direction, sections) {
         runAnimation = requestAnimationFrame(animate);
         if (position == finalPos) {
             cancelAnimationFrame(runAnimation);
-            setTimeout(function () {}, 2000);
+            setTimeout(function () {
+                
+            }, 2000);  
         }
     };
     runAnimation = requestAnimationFrame(animate);
-};
+}
 
-// ---------------------------------------------------------- TOUCHSCREEN !!!! -------------------------------------------------
-var swipeDetect = function swipeDetect(sections) {
-    var swipedir = void 0,
-        startX = void 0,
-        startY = void 0,
-        distX = void 0,
-        distY = void 0,
-        threshold = 150,
-        //required min distance traveled to be considered swipe
-    restraint = 100,
-        // maximum distance allowed at the same time in perpendicular direction
-    allowedTime = 1000,
-        // maximum time allowed to travel that distance
-    elapsedTime = void 0,
-        startTime = void 0;
-    window.addEventListener("touchstart", function (e) {
-        e.preventDefault();
-        var touchobj = e.changedTouches[0];
-        swipedir = 'none';
-        startX = touchobj.pageX;
-        startY = touchobj.pageY;
-        startTime = new Date().getTime(); // record time when finger first makes contact with surface
-    }, false);
-
-    window.addEventListener("touchend", function (e) {
-        e.preventDefault();
-        var touchobj = e.changedTouches[0];
-        distX = touchobj.pageX - startX; // get horizontal dist traveled by finger while in contact with surface
-        distY = touchobj.pageY - startY; // get vertical dist traveled by finger while in contact with surface
-        elapsedTime = new Date().getTime() - startTime; // get time elapsed
-        if (elapsedTime <= allowedTime) {
-            // first condition for awipe met
-            if (Math.abs(distY) >= threshold && Math.abs(distX) <= restraint) {
-                // 2nd condition for vertical swipe met
-                swipedir = distY < 0 ? 'down' : 'up'; // if dist traveled is negative, it indicates up swipe
-            }
-        }
-        console.log(swipedir);
-        moveToSection(swipedir, sections);
-    });
-};
-var initSwipeMovement = function initSwipeMovement() {
-    var sections = getSections();
-    swipeDetect(sections);
-};
-// initSwipeMovement();
-
-// wheelMovement(getSections());
-
-
->>>>>>> 601a08040bb6e433ac85fc67ad7259000696810a
+*/
 // FALTA:
 // Asignarle un evento a los botones de la barra de tareas para que te redirigan a la porción señalada.
 // Asignarle el evento a los botones de alguans secciones para que te dirijan a la sección siguiente.
