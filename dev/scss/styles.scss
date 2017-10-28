@@ -16,7 +16,6 @@ $xs: $m * 0.7;
 // body {
 //     overflow: hidden;
 // }
-
 @import "base/normalize";
 @import "base/base.scss";
 @import "layout/header.scss";
@@ -27,3 +26,4 @@ $xs: $m * 0.7;
 @import "layout/works.scss";
 @import "layout/contact.scss";
 @import "layout/footer.scss";
+@import "modules/jsClasses";
