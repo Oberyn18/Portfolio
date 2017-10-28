@@ -1,3 +1,46 @@
+const disableScrollBar = () => {
+    document.body.classList.add('stop-scroll');
+};
+
+const disableTouch = () => {
+    document.body.classList.add('stop-touch');
+};
+
+const enableScrollBar = () => {
+    document.body.classList.remove('stop-scroll');
+}
+
+const enableTouch = () => {
+    document.body.classList.remove('stop-touch');
+}
+
+// Disables default behavior of element e
+
+function preventDefault(e) {
+    e = e || window.event;
+    if (e.preventDefault)
+        e.preventDefault();
+    e.returnValue = false;  
+}
+
+const disableScroll = () => {
+    if (window.addEventListener) // older FF
+        window.addEventListener('DOMMouseScroll', preventDefault, false);
+    window.onwheel = preventDefault; // modern standard
+    window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
+    window.ontouchmove  = preventDefault; // mobile
+    document.onkeydown  = preventDefaultForScrollKeys;
+}
+  
+const enableScroll = () => {
+    if (window.removeEventListener)
+        window.removeEventListener('DOMMouseScroll', preventDefault, false);
+    window.onmousewheel = document.onmousewheel = null; 
+    window.onwheel = null; 
+    window.ontouchmove = null;  
+    document.onkeydown = null;  
+}
+
 // Retorna la posición actual del scroll
 const getCurrentPosition = () => document.scrollingElement.scrollTop;
 
@@ -39,7 +82,7 @@ const getSections = (sectionsIds) => {
 };
 
 // Función que simula el "easing"
-const easing = function(progress) {
+const easing = (progress) => {
     return progress < 0.5 ? 4 * progress * progress * progress : (progress - 1) * (2 * progress - 2) * (2 * progress - 2) + 1;    
 }
 
@@ -107,7 +150,11 @@ const fullPageSlider = () => {
     });
 };
 
+
 fullPageSlider();
+
+
+
 /*
  TODO:
  - Cambiar esa bandera por un evento que bloquee el touch y la rueda del mouse.

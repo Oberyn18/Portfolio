@@ -1,5 +1,46 @@
 'use strict';
 
+var disableScrollBar = function disableScrollBar() {
+    document.body.classList.add('stop-scroll');
+};
+
+var disableTouch = function disableTouch() {
+    document.body.classList.add('stop-touch');
+};
+
+var enableScrollBar = function enableScrollBar() {
+    document.body.classList.remove('stop-scroll');
+};
+
+var enableTouch = function enableTouch() {
+    document.body.classList.remove('stop-touch');
+};
+
+// Disables default behavior of element e
+
+function preventDefault(e) {
+    e = e || window.event;
+    if (e.preventDefault) e.preventDefault();
+    e.returnValue = false;
+}
+
+var disableScroll = function disableScroll() {
+    if (window.addEventListener) // older FF
+        window.addEventListener('DOMMouseScroll', preventDefault, false);
+    window.onwheel = preventDefault; // modern standard
+    window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
+    window.ontouchmove = preventDefault; // mobile
+    document.onkeydown = preventDefaultForScrollKeys;
+};
+
+var enableScroll = function enableScroll() {
+    if (window.removeEventListener) window.removeEventListener('DOMMouseScroll', preventDefault, false);
+    window.onmousewheel = document.onmousewheel = null;
+    window.onwheel = null;
+    window.ontouchmove = null;
+    document.onkeydown = null;
+};
+
 // Retorna la posición actual del scroll
 var getCurrentPosition = function getCurrentPosition() {
     return document.scrollingElement.scrollTop;
@@ -135,6 +176,7 @@ var fullPageSlider = function fullPageSlider() {
 };
 
 fullPageSlider();
+
 /*
  TODO:
  - Cambiar esa bandera por un evento que bloquee el touch y la rueda del mouse.
