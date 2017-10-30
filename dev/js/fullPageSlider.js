@@ -149,8 +149,11 @@ const fullPageSlider = () => {
         }
     });
     // --------------------------------- TOUCH EVENT --------------------------
-    let mc = new Hammer(document.body);
-    mc.get('pan').set({ direction: Hammer.DIRECTION_VERTICAL}).set({threshold: 150});
+    let mc = new Hammer(document.body, {
+        touchAction: "pan-y"
+    });
+    
+    mc.get('pan').set({ direction: Hammer.DIRECTION_VERTICAL}).set({threshold: 200});
     mc.on("panup", function(ev) {
         if(flag) {
             flag = false;            
