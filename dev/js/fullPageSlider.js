@@ -88,11 +88,10 @@ const easing = (progress) => {
 
 // Esta bandera activará y desactivará el scroll con el mouse en el evento siguiente, se define ahora porque animatedScrolling la usa
 let flag = false;
-const animatedScrolling = (startPos, finalPos, waitTime) => {
+const animatedScrolling = (startPos, finalPos, waitTime, duration) => {
     let runAnimation; // guardará el animation frame
     let timeLapsed = 0; // acumulador del tiempo transcurrido
     let percentage, position; // contenedores de las posiciones actuales y porcentaje avanzado
-    let duration = 2000; // duración deseada
     let distance = finalPos - startPos; // distancia entre ambas posiciones
     const animate = () => {
         timeLapsed += 16;
@@ -124,7 +123,7 @@ const fullPageSlider = () => {
     // Posición final (posición que debería estar ocupando el viewport)
     let endPos = sections[actualSectionInd][1];
     // Animar el movimiento de la posición actual a la posición indicada.
-    animatedScrolling(startPos, endPos, 500);
+    animatedScrolling(startPos, endPos, 500, 2000);
     // ----- EVENTO PARA LA RUEDA DEL RATÓN
     // Total de secciones
     let total = sections.length;
@@ -146,7 +145,7 @@ const fullPageSlider = () => {
             }
             actualSectionInd %= total;
             endPos = sections[actualSectionInd][1]; // posición final
-            animatedScrolling(startPos, endPos, 0);
+            animatedScrolling(startPos, endPos, 0, 2000);
         }
     });
     // --------------------------------- TOUCH EVENT --------------------------
@@ -159,7 +158,7 @@ const fullPageSlider = () => {
             ++actualSectionInd;
             actualSectionInd %= total;
             endPos = sections[actualSectionInd][1]; // posición final
-            animatedScrolling(startPos, endPos, 500);
+            animatedScrolling(startPos, endPos, 0, 1500);
         }
     });
     mc.on("pandown", function(ev) {
@@ -173,7 +172,7 @@ const fullPageSlider = () => {
             }
             actualSectionInd %= total;
             endPos = sections[actualSectionInd][1]; // posición final
-            animatedScrolling(startPos, endPos, 500);
+            animatedScrolling(startPos, endPos, 0, 1500);
         }
     });
 };

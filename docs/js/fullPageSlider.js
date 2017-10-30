@@ -112,12 +112,11 @@ var easing = function easing(progress) {
 
 // Esta bandera activará y desactivará el scroll con el mouse en el evento siguiente, se define ahora porque animatedScrolling la usa
 var flag = false;
-var animatedScrolling = function animatedScrolling(startPos, finalPos, waitTime) {
+var animatedScrolling = function animatedScrolling(startPos, finalPos, waitTime, duration) {
     var runAnimation = void 0; // guardará el animation frame
     var timeLapsed = 0; // acumulador del tiempo transcurrido
     var percentage = void 0,
         position = void 0; // contenedores de las posiciones actuales y porcentaje avanzado
-    var duration = 2000; // duración deseada
     var distance = finalPos - startPos; // distancia entre ambas posiciones
     var animate = function animate() {
         timeLapsed += 16;
@@ -149,7 +148,7 @@ var fullPageSlider = function fullPageSlider() {
     // Posición final (posición que debería estar ocupando el viewport)
     var endPos = sections[actualSectionInd][1];
     // Animar el movimiento de la posición actual a la posición indicada.
-    animatedScrolling(startPos, endPos, 500);
+    animatedScrolling(startPos, endPos, 500, 2000);
     // ----- EVENTO PARA LA RUEDA DEL RATÓN
     // Total de secciones
     var total = sections.length;
@@ -171,7 +170,7 @@ var fullPageSlider = function fullPageSlider() {
             }
             actualSectionInd %= total;
             endPos = sections[actualSectionInd][1]; // posición final
-            animatedScrolling(startPos, endPos, 0);
+            animatedScrolling(startPos, endPos, 0, 2000);
         }
     });
     // --------------------------------- TOUCH EVENT --------------------------
@@ -184,7 +183,7 @@ var fullPageSlider = function fullPageSlider() {
             ++actualSectionInd;
             actualSectionInd %= total;
             endPos = sections[actualSectionInd][1]; // posición final
-            animatedScrolling(startPos, endPos, 500);
+            animatedScrolling(startPos, endPos, 0, 1500);
         }
     });
     mc.on("pandown", function (ev) {
@@ -198,7 +197,7 @@ var fullPageSlider = function fullPageSlider() {
             }
             actualSectionInd %= total;
             endPos = sections[actualSectionInd][1]; // posición final
-            animatedScrolling(startPos, endPos, 500);
+            animatedScrolling(startPos, endPos, 0, 1500);
         }
     });
 };
